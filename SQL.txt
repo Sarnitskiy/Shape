@@ -1,0 +1,7 @@
+tables: product(id, name), category(id, name), product_category (id, product_id, category_id)
+
+select product.name, category.name
+  from product 
+         left join product_category on product_category.product_id = product.id
+	 left join category on category.id = product_category.category_id
+order by product.name;
